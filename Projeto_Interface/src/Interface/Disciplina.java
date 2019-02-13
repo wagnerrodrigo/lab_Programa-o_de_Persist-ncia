@@ -17,6 +17,7 @@ public class Disciplina extends javax.swing.JDialog {
     public Disciplina(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

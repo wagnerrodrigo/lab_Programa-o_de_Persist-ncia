@@ -17,6 +17,7 @@ public class Curso extends javax.swing.JDialog {
     public Curso(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

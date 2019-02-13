@@ -5,6 +5,8 @@
  */
 package Interface;
 
+import java.util.Locale;
+
 /**
  *
  * @author alunoces
@@ -17,6 +19,7 @@ public class Aluno extends javax.swing.JDialog {
     public Aluno(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
