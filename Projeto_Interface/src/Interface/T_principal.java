@@ -6,6 +6,7 @@
 package Interface;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -87,6 +88,11 @@ public class T_principal extends javax.swing.JFrame {
 
         mmSair.setMnemonic('s');
         mmSair.setText("Sair");
+        mmSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mmSairActionPerformed(evt);
+            }
+        });
         mmCadrastro.add(mmSair);
 
         jMenuBar2.add(mmCadrastro);
@@ -134,6 +140,13 @@ public class T_principal extends javax.swing.JFrame {
        // TODO add your handling code here:
        new Disciplina(null, true).setVisible(true);
     }//GEN-LAST:event_mmDisiciplinaActionPerformed
+
+    private void mmSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mmSairActionPerformed
+        // TODO add your handling code here:
+        int status = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair da aplicação", "Fechar", JOptionPane.YES_NO_OPTION);
+        if(status == JOptionPane.YES_NO_OPTION)
+            System.exit(0);
+    }//GEN-LAST:event_mmSairActionPerformed
 
     /**
      * @param args the command line arguments
