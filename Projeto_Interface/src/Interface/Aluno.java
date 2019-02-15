@@ -35,11 +35,11 @@ public class Aluno extends javax.swing.JDialog {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         lb_OBS = new javax.swing.JLabel();
-        txt_Celular1 = new javax.swing.JFormattedTextField();
+        txt_CPF = new javax.swing.JFormattedTextField();
         txt_Endereco = new javax.swing.JTextField();
         lb_Matricula1 = new javax.swing.JLabel();
         lb_Nome1 = new javax.swing.JLabel();
-        txt_Nome1 = new javax.swing.JTextField();
+        txt_Nome = new javax.swing.JTextField();
         lb_Email1 = new javax.swing.JLabel();
         txt_Email1 = new javax.swing.JTextField();
         lb_Endereco1 = new javax.swing.JLabel();
@@ -54,6 +54,7 @@ public class Aluno extends javax.swing.JDialog {
         btn_Excluir = new javax.swing.JButton();
         btn_Editar = new javax.swing.JButton();
         btn_Sair = new javax.swing.JButton();
+        txt_Matricula = new javax.swing.JTextField();
 
         jTextField1.setText("jTextField1");
 
@@ -68,11 +69,11 @@ public class Aluno extends javax.swing.JDialog {
         getContentPane().add(lb_OBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 40, 20));
 
         try {
-            txt_Celular1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txt_CPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        getContentPane().add(txt_Celular1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 100, -1));
+        getContentPane().add(txt_CPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 100, -1));
         getContentPane().add(txt_Endereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 320, -1));
 
         lb_Matricula1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -82,7 +83,7 @@ public class Aluno extends javax.swing.JDialog {
         lb_Nome1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lb_Nome1.setText("Nome:");
         getContentPane().add(lb_Nome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 70, 20));
-        getContentPane().add(txt_Nome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 320, -1));
+        getContentPane().add(txt_Nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 320, -1));
 
         lb_Email1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lb_Email1.setText("Email:");
@@ -92,7 +93,7 @@ public class Aluno extends javax.swing.JDialog {
         lb_Endereco1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lb_Endereco1.setText("Endereço:");
         getContentPane().add(lb_Endereco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 70, 20));
-        getContentPane().add(txt_texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 100, -1));
+        getContentPane().add(txt_texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 100, -1));
 
         lb_Celular1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lb_Celular1.setText("Celular:");
@@ -118,18 +119,28 @@ public class Aluno extends javax.swing.JDialog {
         lb_CPF1.setText("CPF:");
         getContentPane().add(lb_CPF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 40, 20));
 
+        btn_Nome.setMnemonic('n');
         btn_Nome.setText("Novo");
+        btn_Nome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_NomeActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_Nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
 
+        btn_Salva.setMnemonic('s');
         btn_Salva.setText("Salvar");
         getContentPane().add(btn_Salva, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
 
+        btn_Excluir.setMnemonic('e');
         btn_Excluir.setText("Excluir");
         getContentPane().add(btn_Excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, -1, -1));
 
+        btn_Editar.setMnemonic('d');
         btn_Editar.setText("Editar");
         getContentPane().add(btn_Editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
 
+        btn_Sair.setMnemonic('a');
         btn_Sair.setText("Sair");
         btn_Sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,16 +148,29 @@ public class Aluno extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btn_Sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, -1, -1));
+        getContentPane().add(txt_Matricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 100, -1));
 
         setBounds(0, 0, 455, 382);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SairActionPerformed
-       // TODO add your handling code here:
+        // TODO add your handling code here:
         int status = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair da aplicação", "Fechar", JOptionPane.YES_NO_OPTION);
         if(status == JOptionPane.YES_NO_OPTION)
-            dispose();
+        dispose();
     }//GEN-LAST:event_btn_SairActionPerformed
+
+    private void btn_NomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NomeActionPerformed
+        txt_Matricula.setText("");
+        txt_Nome.setText("");
+        txt_Email1.setText("");
+        txt_Endereco.setText("");
+        txt_Celular.setText("");
+        txt_CPF.setText("");
+        txt_Obs.setText("");
+        txt_Matricula.requestFocus();
+        
+    }//GEN-LAST:event_btn_NomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,11 +230,12 @@ public class Aluno extends javax.swing.JDialog {
     private javax.swing.JLabel lb_Matricula1;
     private javax.swing.JLabel lb_Nome1;
     private javax.swing.JLabel lb_OBS;
+    private javax.swing.JFormattedTextField txt_CPF;
     private javax.swing.JFormattedTextField txt_Celular;
-    private javax.swing.JFormattedTextField txt_Celular1;
     private javax.swing.JTextField txt_Email1;
     private javax.swing.JTextField txt_Endereco;
-    private javax.swing.JTextField txt_Nome1;
+    private javax.swing.JTextField txt_Matricula;
+    private javax.swing.JTextField txt_Nome;
     private javax.swing.JTextArea txt_Obs;
     private javax.swing.JTextField txt_texto2;
     // End of variables declaration//GEN-END:variables

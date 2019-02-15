@@ -54,7 +54,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="txt_Celular1">
+    <Component class="javax.swing.JFormattedTextField" name="txt_CPF">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
           <Format format="###.###.###-##" subtype="-1" type="5"/>
@@ -99,7 +99,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_Nome1">
+    <Component class="javax.swing.JTextField" name="txt_Nome">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="90" y="40" width="320" height="-1"/>
@@ -142,7 +142,7 @@
     <Component class="javax.swing.JTextField" name="txt_texto2">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="10" width="100" height="-1"/>
+          <AbsoluteConstraints x="240" y="130" width="100" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -210,8 +210,12 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_Nome">
       <Properties>
+        <Property name="mnemonic" type="int" value="110"/>
         <Property name="text" type="java.lang.String" value="Novo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_NomeActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="50" y="290" width="-1" height="-1"/>
@@ -220,6 +224,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_Salva">
       <Properties>
+        <Property name="mnemonic" type="int" value="115"/>
         <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>
       <Constraints>
@@ -230,6 +235,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_Excluir">
       <Properties>
+        <Property name="mnemonic" type="int" value="101"/>
         <Property name="text" type="java.lang.String" value="Excluir"/>
       </Properties>
       <Constraints>
@@ -240,6 +246,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_Editar">
       <Properties>
+        <Property name="mnemonic" type="int" value="100"/>
         <Property name="text" type="java.lang.String" value="Editar"/>
       </Properties>
       <Constraints>
@@ -250,6 +257,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_Sair">
       <Properties>
+        <Property name="mnemonic" type="int" value="97"/>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
       <Events>
@@ -258,6 +266,13 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="320" y="290" width="-1" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_Matricula">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="90" y="10" width="100" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
