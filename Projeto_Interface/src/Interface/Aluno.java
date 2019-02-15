@@ -6,6 +6,7 @@
 package Interface;
 
 import java.util.Locale;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,8 +34,26 @@ public class Aluno extends javax.swing.JDialog {
 
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        lb_Matricula = new javax.swing.JLabel();
-        txt_texto = new javax.swing.JTextField();
+        lb_OBS = new javax.swing.JLabel();
+        txt_Celular1 = new javax.swing.JFormattedTextField();
+        txt_Endereco = new javax.swing.JTextField();
+        lb_Matricula1 = new javax.swing.JLabel();
+        lb_Nome1 = new javax.swing.JLabel();
+        txt_Nome1 = new javax.swing.JTextField();
+        lb_Email1 = new javax.swing.JLabel();
+        txt_Email1 = new javax.swing.JTextField();
+        lb_Endereco1 = new javax.swing.JLabel();
+        txt_texto2 = new javax.swing.JTextField();
+        lb_Celular1 = new javax.swing.JLabel();
+        txt_Celular = new javax.swing.JFormattedTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt_Obs = new javax.swing.JTextArea();
+        lb_CPF1 = new javax.swing.JLabel();
+        btn_Nome = new javax.swing.JButton();
+        btn_Salva = new javax.swing.JButton();
+        btn_Excluir = new javax.swing.JButton();
+        btn_Editar = new javax.swing.JButton();
+        btn_Sair = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -44,13 +63,90 @@ public class Aluno extends javax.swing.JDialog {
         setTitle("Aluno");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lb_Matricula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lb_Matricula.setText("Matricula:");
-        getContentPane().add(lb_Matricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, 20));
-        getContentPane().add(txt_texto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 100, -1));
+        lb_OBS.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lb_OBS.setText("OBS:");
+        getContentPane().add(lb_OBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 40, 20));
 
-        pack();
+        try {
+            txt_Celular1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        getContentPane().add(txt_Celular1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 100, -1));
+        getContentPane().add(txt_Endereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 320, -1));
+
+        lb_Matricula1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lb_Matricula1.setText("Matricula:");
+        getContentPane().add(lb_Matricula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, 20));
+
+        lb_Nome1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lb_Nome1.setText("Nome:");
+        getContentPane().add(lb_Nome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 70, 20));
+        getContentPane().add(txt_Nome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 320, -1));
+
+        lb_Email1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lb_Email1.setText("Email:");
+        getContentPane().add(lb_Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 70, 20));
+        getContentPane().add(txt_Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 320, -1));
+
+        lb_Endereco1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lb_Endereco1.setText("Endereço:");
+        getContentPane().add(lb_Endereco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 70, 20));
+        getContentPane().add(txt_texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 100, -1));
+
+        lb_Celular1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lb_Celular1.setText("Celular:");
+        getContentPane().add(lb_Celular1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 70, 20));
+
+        try {
+            txt_Celular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) 9 ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        getContentPane().add(txt_Celular, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 100, -1));
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        txt_Obs.setColumns(20);
+        txt_Obs.setRows(5);
+        jScrollPane1.setViewportView(txt_Obs);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 166, 280, 110));
+
+        lb_CPF1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lb_CPF1.setText("CPF:");
+        getContentPane().add(lb_CPF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 40, 20));
+
+        btn_Nome.setText("Novo");
+        getContentPane().add(btn_Nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
+
+        btn_Salva.setText("Salvar");
+        getContentPane().add(btn_Salva, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
+
+        btn_Excluir.setText("Excluir");
+        getContentPane().add(btn_Excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, -1, -1));
+
+        btn_Editar.setText("Editar");
+        getContentPane().add(btn_Editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
+
+        btn_Sair.setText("Sair");
+        btn_Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, -1, -1));
+
+        setBounds(0, 0, 455, 382);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SairActionPerformed
+       // TODO add your handling code here:
+        int status = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair da aplicação", "Fechar", JOptionPane.YES_NO_OPTION);
+        if(status == JOptionPane.YES_NO_OPTION)
+            dispose();
+    }//GEN-LAST:event_btn_SairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,9 +191,27 @@ public class Aluno extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Editar;
+    private javax.swing.JButton btn_Excluir;
+    private javax.swing.JButton btn_Nome;
+    private javax.swing.JButton btn_Sair;
+    private javax.swing.JButton btn_Salva;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JLabel lb_Matricula;
-    private javax.swing.JTextField txt_texto;
+    private javax.swing.JLabel lb_CPF1;
+    private javax.swing.JLabel lb_Celular1;
+    private javax.swing.JLabel lb_Email1;
+    private javax.swing.JLabel lb_Endereco1;
+    private javax.swing.JLabel lb_Matricula1;
+    private javax.swing.JLabel lb_Nome1;
+    private javax.swing.JLabel lb_OBS;
+    private javax.swing.JFormattedTextField txt_Celular;
+    private javax.swing.JFormattedTextField txt_Celular1;
+    private javax.swing.JTextField txt_Email1;
+    private javax.swing.JTextField txt_Endereco;
+    private javax.swing.JTextField txt_Nome1;
+    private javax.swing.JTextArea txt_Obs;
+    private javax.swing.JTextField txt_texto2;
     // End of variables declaration//GEN-END:variables
 }
