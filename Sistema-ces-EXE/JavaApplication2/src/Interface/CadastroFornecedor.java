@@ -52,6 +52,17 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         jl_Email = new javax.swing.JLabel();
         jtf_Email = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
+        jl_Rua = new javax.swing.JLabel();
+        jtf_Rua = new javax.swing.JTextField();
+        jl_Numero = new javax.swing.JLabel();
+        jtf_Numero = new javax.swing.JTextField();
+        jl_Complemento = new javax.swing.JLabel();
+        jtf_Complemento = new javax.swing.JTextField();
+        jl_Bairro = new javax.swing.JLabel();
+        jtf_Bairro = new javax.swing.JTextField();
+        jl_Cep = new javax.swing.JLabel();
+        jftf_Cep = new javax.swing.JFormattedTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,7 +155,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jl_InscEstadual)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtf_InscEstadual, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+                        .addComponent(jtf_InscEstadual))
                     .addComponent(jtf_RazaoS)
                     .addComponent(jtf_NomeFan)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -188,15 +199,78 @@ public class CadastroFornecedor extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Endereço"));
 
+        jl_Rua.setText("Rua:");
+
+        jl_Numero.setText("Numero:");
+
+        jl_Complemento.setText("Complemento:");
+
+        jl_Bairro.setText("Bairro:");
+
+        jtf_Bairro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_BairroActionPerformed(evt);
+            }
+        });
+
+        jl_Cep.setText("Cep:");
+
+        jLabel1.setText("Cidade:");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_Rua)
+                            .addComponent(jl_Numero)
+                            .addComponent(jl_Bairro))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtf_Rua, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jtf_Numero, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jl_Complemento)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtf_Complemento))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jtf_Bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jl_Cep)
+                                .addGap(10, 10, 10)
+                                .addComponent(jftf_Cep))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 182, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Rua)
+                    .addComponent(jtf_Rua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Numero)
+                    .addComponent(jtf_Numero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_Complemento)
+                    .addComponent(jtf_Complemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Bairro)
+                    .addComponent(jtf_Bairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_Cep)
+                    .addComponent(jftf_Cep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -242,6 +316,10 @@ public class CadastroFornecedor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jtf_BairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_BairroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_BairroActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -279,6 +357,7 @@ public class CadastroFornecedor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Bg_Grup;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -286,22 +365,32 @@ public class CadastroFornecedor extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JFormattedTextField jftf_CNPJ_CPF;
     private javax.swing.JFormattedTextField jftf_Celular;
+    private javax.swing.JFormattedTextField jftf_Cep;
     private javax.swing.JFormattedTextField jftf_Telefone;
+    private javax.swing.JLabel jl_Bairro;
     private javax.swing.JLabel jl_CNPJ_CPF;
     private javax.swing.JLabel jl_Celular;
+    private javax.swing.JLabel jl_Cep;
     private javax.swing.JLabel jl_Codigo;
+    private javax.swing.JLabel jl_Complemento;
     private javax.swing.JLabel jl_Email;
     private javax.swing.JLabel jl_InscEstadual;
     private javax.swing.JLabel jl_NomeFan;
+    private javax.swing.JLabel jl_Numero;
     private javax.swing.JLabel jl_RazaoS;
+    private javax.swing.JLabel jl_Rua;
     private javax.swing.JLabel jl_Telefone;
     private javax.swing.JRadioButton jrb_PessoaFisica;
     private javax.swing.JRadioButton jrb_PessoaJuridica;
     private javax.swing.JTextArea jta_Obs;
+    private javax.swing.JTextField jtf_Bairro;
     private javax.swing.JTextField jtf_Codigo;
+    private javax.swing.JTextField jtf_Complemento;
     private javax.swing.JTextField jtf_Email;
     private javax.swing.JTextField jtf_InscEstadual;
     private javax.swing.JTextField jtf_NomeFan;
+    private javax.swing.JTextField jtf_Numero;
     private javax.swing.JTextField jtf_RazaoS;
+    private javax.swing.JTextField jtf_Rua;
     // End of variables declaration//GEN-END:variables
 }
