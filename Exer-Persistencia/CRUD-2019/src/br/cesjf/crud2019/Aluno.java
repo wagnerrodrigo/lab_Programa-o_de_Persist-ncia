@@ -5,7 +5,7 @@
  */
 package br.cesjf.crud2019;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  *
@@ -32,6 +32,9 @@ public class Aluno {
         this.dataNacimento = dataNacimento;
         this.altura = altura;
         this.peso = peso;
+    }
+
+    public Aluno() {
     }
     
     
@@ -103,7 +106,7 @@ public class Aluno {
 // metodo tostring
     @Override
     public String toString() {
-        return "Aluno{" + "id=" + id + ","
+        return "\n Aluno{" + "id=" + id + ","
                 + " nome=" + nome
                 + ", dataMatricula=" + dataMatricula 
                 + ", enderco=" + enderco 
