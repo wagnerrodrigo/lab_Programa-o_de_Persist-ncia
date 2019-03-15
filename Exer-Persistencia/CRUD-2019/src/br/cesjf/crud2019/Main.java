@@ -86,5 +86,25 @@ public class Main {
         return alunos;
     }
     
+    public static void exluir(Aluno aluno){
+        // conexao com o banco
+        Connection comn = new ConectionFactory().conecta();
+        // cria a query
+        String sql = "DELETE FROM aluno WHERE id = ?";
+        // defina os paramentros para a inser o com base no objeto
+        try {
+            PreparedStatement statement = comn.prepareStatement(sql);
+            statement.setInt(1, aluno.getId());
+            int linhasAfetadas = statement.executeUpdate();
+            if (linhasAfetadas>0){
+                System.out.println("Aluno Excluido com sucesso");
+            } else{
+                throw new RuntimeException("Erro ao Excluir o aluno!");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao Excluir o aluno");
+        }
+        
+    }
     
 }
