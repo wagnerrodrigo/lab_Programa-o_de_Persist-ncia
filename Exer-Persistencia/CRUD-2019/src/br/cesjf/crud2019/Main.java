@@ -98,7 +98,7 @@ public class Main {
         // conexao com o banco
         Connection comn = new ConectionFactory().conecta();
         // cria a query
-        String sql = "DELETE FROM aluno WHERE id = ?";
+        String sql = "DELETE FROM aluno WHERE alu_id =?";
         // defina os paramentros para a inser o com base no objeto
         try {
             PreparedStatement statement = comn.prepareStatement(sql);
