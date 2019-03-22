@@ -24,8 +24,16 @@ public class Main {
     public static void main(String[] args) {
 //     insere(new Aluno(0, "wagner rodrigo",new Date(),"rua x", "988031094", new Date(), 1.93f, 100f));
 //     insere(new Aluno(0, "paulo ferreira",new Date(),"rua x", "988051403", new Date(), 1.93f, 78f));
-        List<Aluno> alunos = listar();
+        // criar nova lista de alunos
+        //List<Aluno> alunos = listar();
         
+       // System.out.println(alunos);
+        
+        //Aluno al = new Aluno();
+        
+        // remover Aluno
+        exluir(new Aluno(1,null,null,null,null,null,null,null));
+        List<Aluno> alunos = listar();
         System.out.println(alunos);
     }
     
@@ -102,7 +110,7 @@ public class Main {
                 throw new RuntimeException("Erro ao Excluir o aluno!");
             }
         } catch (SQLException e) {
-            throw new RuntimeException("Erro ao Excluir o aluno");
+            throw new RuntimeException("Erro ao Excluir o aluno"+e);
         }
         
     }
