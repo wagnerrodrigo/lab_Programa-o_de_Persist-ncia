@@ -32,9 +32,16 @@ public class Main {
         //Aluno al = new Aluno();
         
         // remover Aluno
-        exluir(new Aluno(1,null,null,null,null,null,null,null));
+//        exluir(new Aluno(1,null,null,null,null,null,null,null));
+//        List<Aluno> alunos = listar();
+//        System.out.println(alunos);
+        
+        // metodo atualizar aluno
+        //atualiza(new Aluno(4,"Marcela Ferreita",new Date(),"rua XPTO", "988035464", new Date(), 1.60f, 80f));
+        atualiza(new Aluno(4,"Marc",new Date(),"rua XPTO", "988031509", new Date(), 1.80f, 85f));
         List<Aluno> alunos = listar();
         System.out.println(alunos);
+        
     }
     
     
@@ -122,7 +129,7 @@ public class Main {
         // cria a query
         
         String sql = "UPDATE aluno SET alu_nome=?, alu_datamatricula=?,alu_endereco=?, " +
-                "alu_endereco=?, alu_dataNacimento=?, alu_altura=?, alu_peso=?";
+                "alu_endereco=?, alu_dataNacimento=?, alu_altura=?, alu_peso=? WHERE alu_id=?";
         
         // defina ao parametro para a inser o com base no objeto
         try {
@@ -134,6 +141,7 @@ public class Main {
             statement.setDate(5, new java.sql.Date(aluno.getDataNacimento().getTime()));
             statement.setFloat(6, aluno.getAltura());
             statement.setFloat(7, aluno.getPeso());
+            statement.setInt(8, aluno.getId());
             
             int linhasAfetadas = statement.executeUpdate();
             if (linhasAfetadas>0) {
@@ -143,7 +151,7 @@ public class Main {
             }
             
         } catch (SQLException e) {
-            throw new RuntimeException("Erro ao atualizar o aluno!");
+            throw new RuntimeException("Erro ao atualizar o aluno!"+e);
         }
     }
 }
