@@ -115,4 +115,35 @@ public class Main {
         
     }
     
+    public static void atualiza(Aluno aluno){
+        // conexão com o banco de dados
+        Connection conn = new ConectionFactory().conecta();
+        
+        // cria a query
+        
+        String sql = "UPDATE aluno SET alu_nome=?, alu_datamatricula=?,alu_endereco=?, " +
+                "alu_endereco=?, alu_dataNacimento=?, alu_altura=?, alu_peso=?";
+        
+        // defina ao parametro para a inser o com base no objeto
+        try {
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1, aluno.getNome() );
+            statement.setDate(2, new java.sql.Date(aluno.getDataMatricula().getTime()));
+            statement.setString(3, aluno.getEnderco());
+            statement.setString(4, aluno.getTelefone());
+            statement.setDate(5, new java.sql.Date(aluno.getDataNacimento().getTime()));
+            statement.setFloat(6, aluno.getAltura());
+            statement.setFloat(7, aluno.getPeso());
+            
+            int linhasAfetadas = statement.executeUpdate();
+            if (linhasAfetadas>0) {
+                System.out.println("Aluno Atualizado com sucesso");
+           }else {
+                throw new RuntimeException("Erro ao atualizar o aluno");
+            }
+            
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao atualizar o aluno!");
+        }
+    }
 }
