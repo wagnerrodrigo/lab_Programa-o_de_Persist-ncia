@@ -22,25 +22,25 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
-     insere(new Aluno(0, "wagner rodrigo",new Date(),"rua x", "988031094", new Date(), 1.93f, 100f));
-     insere(new Aluno(0, "paulo ferreira",new Date(),"rua x", "988051403", new Date(), 1.93f, 78f));
+    // insere(new Aluno(0, "wagner rodrigo",new Date(),"rua x", "988031094", new Date(), 1.93f, 100f));
+    // insere(new Aluno(0, "paulo ferreira",new Date(),"rua x", "988051403", new Date(), 1.93f, 78f));
 //         criar nova lista de alunos
-        List<Aluno> alunos = listar();
+      //  List<Aluno> alunos = listar();
         
-        System.out.println(alunos);
+        //System.out.println(alunos);
         
         //Aluno al = new Aluno();
         
         // remover Aluno
-        exluir(new Aluno(6,null,null,null,null,null,null,null));
-        exluir(new Aluno(7,null,null,null,null,null,null,null));
+      //  exluir(new Aluno(6,null,null,null,null,null,null,null));
+       // exluir(new Aluno(7,null,null,null,null,null,null,null));
         // List<Aluno> alunos = listar();
-        System.out.println(alunos);
+       // System.out.println(alunos);
         
         // metodo atualizar aluno
-        atualiza(new Aluno(4,"Marcela Ferreita",new Date(),"rua XPTO", "988035464", new Date(), 1.60f, 80f));
-        atualiza(new Aluno(4,"Marc",new Date(),"rua XPTO", "988031509", new Date(), 1.80f, 85f));
-     //   List<Aluno> alunos = listar();
+      //  atualiza(new Aluno(4,"Marcela Ferreita",new Date(),"rua XPTO", "988035464", new Date(), 1.60f, 80f));
+        atualiza(new Aluno(8,"wagner rodrigo da silva",new Date(),"rua XPTO", "988031509", new Date(), 1.80f, 85f));
+        List<Aluno> alunos = listar();
         System.out.println(alunos);
         
     }
