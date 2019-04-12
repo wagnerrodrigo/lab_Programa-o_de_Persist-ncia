@@ -25,7 +25,7 @@ public class AlunosDao {
     public void cadastrarAluno(Alunos obj){
     
         try {
-            String cmdsql ="insert into alunos(alu_nome, alu_emal, alu_celular, alu_cpf,alu_obs) valures(?,?,?,?,?)";
+            String cmdsql ="insert into alunos(alu_nome, alu_email, alu_celular, alu_cpf, alu_obs) VALUES(?, ?, ?, ?, ?)";
             PreparedStatement stmt = conecta.prepareStatement(cmdsql);
             stmt.setString(1, obj.getNome());
             stmt.setString(2, obj.getEmail());

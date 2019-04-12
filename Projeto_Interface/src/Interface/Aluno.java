@@ -5,6 +5,8 @@
  */
 package Interface;
 
+import DAO.AlunosDao;
+import Dominio.Alunos;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author alunoces
  */
 public class Aluno extends javax.swing.JDialog {
-
+    AlunosDao dao;
     /**
      * Creates new form Aluno
      */
@@ -37,7 +39,6 @@ public class Aluno extends javax.swing.JDialog {
         txtNome1 = new javax.swing.JTextField();
         lbEmail = new javax.swing.JLabel();
         txtMatricula2 = new javax.swing.JTextField();
-        txtCpf = new javax.swing.JFormattedTextField();
         lbCelular1 = new javax.swing.JLabel();
         txtCelular = new javax.swing.JFormattedTextField();
         lbCpf1 = new javax.swing.JLabel();
@@ -48,6 +49,7 @@ public class Aluno extends javax.swing.JDialog {
         jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        txtCpf = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro Aluno");
@@ -63,7 +65,7 @@ public class Aluno extends javax.swing.JDialog {
                 txtEmailActionPerformed(evt);
             }
         });
-        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 100, 280, 20));
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 100, 280, 30));
 
         lbMatricula1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lbMatricula1.setForeground(new java.awt.Color(0, 204, 153));
@@ -80,7 +82,7 @@ public class Aluno extends javax.swing.JDialog {
                 txtNome1ActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 60, 280, 20));
+        getContentPane().add(txtNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 60, 280, 30));
 
         lbEmail.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lbEmail.setForeground(new java.awt.Color(0, 204, 153));
@@ -92,14 +94,7 @@ public class Aluno extends javax.swing.JDialog {
                 txtMatricula2ActionPerformed(evt);
             }
         });
-        getContentPane().add(txtMatricula2, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 20, 70, -1));
-
-        try {
-            txtCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        getContentPane().add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 80, -1));
+        getContentPane().add(txtMatricula2, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 20, 70, 30));
 
         lbCelular1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lbCelular1.setForeground(new java.awt.Color(0, 204, 153));
@@ -107,11 +102,16 @@ public class Aluno extends javax.swing.JDialog {
         getContentPane().add(lbCelular1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 50, 20));
 
         try {
-            txtCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####")));
+            txtCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        getContentPane().add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 70, -1));
+        txtCelular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCelularActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 70, 30));
 
         lbCpf1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lbCpf1.setForeground(new java.awt.Color(0, 204, 153));
@@ -131,6 +131,11 @@ public class Aluno extends javax.swing.JDialog {
         getContentPane().add(btNovo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
 
         jButton2.setText("Salvar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 70, -1));
 
         jButton3.setText("Excluir");
@@ -146,6 +151,13 @@ public class Aluno extends javax.swing.JDialog {
             }
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, -1, -1));
+
+        txtCpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCpfActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 90, -1));
 
         setSize(new java.awt.Dimension(453, 414));
         setLocationRelativeTo(null);
@@ -168,6 +180,36 @@ public class Aluno extends javax.swing.JDialog {
         if (status==JOptionPane.YES_OPTION)
             this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        try {
+            Alunos obj = new Alunos();
+            
+            obj.setNome(txtNome1.getText());
+            obj.setEmail(txtEmail.getText());
+            obj.setCelular(Integer.parseInt(txtCelular.getText()));
+            obj.setCpf(Integer.parseInt(txtCpf.getText()));
+            obj.setObs(jTextArea1.getText());
+            
+            dao = new AlunosDao();
+            dao.cadastrarAluno(obj);
+            
+            JOptionPane.showMessageDialog(null, "cadastro realizado com sucesso");
+                    
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar o alunos");
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCelularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCelularActionPerformed
+
+    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCpfActionPerformed
 
     /**
      * @param args the command line arguments
