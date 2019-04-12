@@ -19,7 +19,7 @@ public class T_principal extends javax.swing.JFrame {
      */
     public T_principal() {
         this.setExtendedState(MAXIMIZED_BOTH);
-        this.getContentPane().setBackground(Color.gray);
+        this.getContentPane().setBackground(Color.LIGHT_GRAY);
         initComponents();
     }
 
@@ -32,121 +32,99 @@ public class T_principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar2 = new javax.swing.JMenuBar();
-        mmCadrastro = new javax.swing.JMenu();
-        mmAluno = new javax.swing.JMenuItem();
-        mmCurso = new javax.swing.JMenuItem();
-        mmProfessor = new javax.swing.JMenuItem();
-        mmDisiciplina = new javax.swing.JMenuItem();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mnCadastro = new javax.swing.JMenu();
+        mnAluno = new javax.swing.JMenuItem();
+        mnCurso = new javax.swing.JMenuItem();
+        mnDisciplina = new javax.swing.JMenuItem();
+        mnProfessor = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        mmSair = new javax.swing.JMenuItem();
-        mmEdição = new javax.swing.JMenu();
-        mmRelatorio = new javax.swing.JMenu();
+        mnSair = new javax.swing.JMenuItem();
+        mnEdicao = new javax.swing.JMenu();
+        mnRelatorio = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Tela Principal");
+        setTitle("Sistema Acadeusmico");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        mmCadrastro.setMnemonic('c');
-        mmCadrastro.setText("Cadrastro");
+        mnCadastro.setMnemonic('c');
+        mnCadastro.setText("Cadastro");
 
-        mmAluno.setMnemonic('a');
-        mmAluno.setText("Aluno");
-        mmAluno.addActionListener(new java.awt.event.ActionListener() {
+        mnAluno.setText("Aluno");
+        mnAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mmAlunoActionPerformed(evt);
+                mnAlunoActionPerformed(evt);
             }
         });
-        mmCadrastro.add(mmAluno);
+        mnCadastro.add(mnAluno);
 
-        mmCurso.setMnemonic('c');
-        mmCurso.setText("Curso");
-        mmCurso.addActionListener(new java.awt.event.ActionListener() {
+        mnCurso.setText("Curso");
+        mnCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mmCursoActionPerformed(evt);
+                mnCursoActionPerformed(evt);
             }
         });
-        mmCadrastro.add(mmCurso);
+        mnCadastro.add(mnCurso);
 
-        mmProfessor.setMnemonic('p');
-        mmProfessor.setText("Professor");
-        mmProfessor.addActionListener(new java.awt.event.ActionListener() {
+        mnDisciplina.setText("Disciplina");
+        mnDisciplina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mmProfessorActionPerformed(evt);
+                mnDisciplinaActionPerformed(evt);
             }
         });
-        mmCadrastro.add(mmProfessor);
+        mnCadastro.add(mnDisciplina);
 
-        mmDisiciplina.setMnemonic('d');
-        mmDisiciplina.setText("Disciplina");
-        mmDisiciplina.addActionListener(new java.awt.event.ActionListener() {
+        mnProfessor.setText("Professor");
+        mnProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mmDisiciplinaActionPerformed(evt);
+                mnProfessorActionPerformed(evt);
             }
         });
-        mmCadrastro.add(mmDisiciplina);
-        mmCadrastro.add(jSeparator1);
+        mnCadastro.add(mnProfessor);
+        mnCadastro.add(jSeparator1);
 
-        mmSair.setMnemonic('s');
-        mmSair.setText("Sair");
-        mmSair.addActionListener(new java.awt.event.ActionListener() {
+        mnSair.setText("Sair");
+        mnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mmSairActionPerformed(evt);
+                mnSairActionPerformed(evt);
             }
         });
-        mmCadrastro.add(mmSair);
+        mnCadastro.add(mnSair);
 
-        jMenuBar2.add(mmCadrastro);
+        jMenuBar1.add(mnCadastro);
 
-        mmEdição.setMnemonic('e');
-        mmEdição.setText("Edição");
-        jMenuBar2.add(mmEdição);
+        mnEdicao.setText("Edição");
+        jMenuBar1.add(mnEdicao);
 
-        mmRelatorio.setMnemonic('r');
-        mmRelatorio.setText("Relatorio");
-        jMenuBar2.add(mmRelatorio);
+        mnRelatorio.setText("Relatório");
+        jMenuBar1.add(mnRelatorio);
 
-        setJMenuBar(jMenuBar2);
+        setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 442, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 239, Short.MAX_VALUE)
-        );
-
-        pack();
+        setBounds(0, 0, 437, 360);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mmAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mmAlunoActionPerformed
-        // TODO add your handling code here:
-        new Aluno(null,true).setVisible(true);
-    }//GEN-LAST:event_mmAlunoActionPerformed
+    private void mnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnSairActionPerformed
+        int status = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair da aplicação?", "Fechar", JOptionPane.YES_NO_OPTION);
+        if (status==JOptionPane.YES_OPTION)
+            this.dispose();
+    }//GEN-LAST:event_mnSairActionPerformed
 
-    private void mmCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mmCursoActionPerformed
-        // TODO add your handling code here:
+    private void mnAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAlunoActionPerformed
+        new Aluno(null, true).setVisible(true);
+    }//GEN-LAST:event_mnAlunoActionPerformed
+
+    private void mnCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCursoActionPerformed
         new Curso(null, true).setVisible(true);
-    }//GEN-LAST:event_mmCursoActionPerformed
+    }//GEN-LAST:event_mnCursoActionPerformed
 
-    private void mmProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mmProfessorActionPerformed
-        // TODO add your handling code here:
+    private void mnDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnDisciplinaActionPerformed
+        new Disciplina(null, true).setVisible(true);
+    }//GEN-LAST:event_mnDisciplinaActionPerformed
+
+    private void mnProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnProfessorActionPerformed
         new Professor(null, true).setVisible(true);
-    }//GEN-LAST:event_mmProfessorActionPerformed
-
-    private void mmDisiciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mmDisiciplinaActionPerformed
-       // TODO add your handling code here:
-       new Disciplina(null, true).setVisible(true);
-    }//GEN-LAST:event_mmDisiciplinaActionPerformed
-
-    private void mmSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mmSairActionPerformed
-        // TODO add your handling code here:
-        int status = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair da aplicação", "Fechar", JOptionPane.YES_NO_OPTION);
-        if(status == JOptionPane.YES_NO_OPTION)
-            System.exit(0);
-    }//GEN-LAST:event_mmSairActionPerformed
+    }//GEN-LAST:event_mnProfessorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,15 +162,15 @@ public class T_principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JMenuItem mmAluno;
-    private javax.swing.JMenu mmCadrastro;
-    private javax.swing.JMenuItem mmCurso;
-    private javax.swing.JMenuItem mmDisiciplina;
-    private javax.swing.JMenu mmEdição;
-    private javax.swing.JMenuItem mmProfessor;
-    private javax.swing.JMenu mmRelatorio;
-    private javax.swing.JMenuItem mmSair;
+    private javax.swing.JMenuItem mnAluno;
+    private javax.swing.JMenu mnCadastro;
+    private javax.swing.JMenuItem mnCurso;
+    private javax.swing.JMenuItem mnDisciplina;
+    private javax.swing.JMenu mnEdicao;
+    private javax.swing.JMenuItem mnProfessor;
+    private javax.swing.JMenu mnRelatorio;
+    private javax.swing.JMenuItem mnSair;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,7 +17,6 @@ public class Disciplina extends javax.swing.JDialog {
     public Disciplina(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -30,7 +29,7 @@ public class Disciplina extends javax.swing.JDialog {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Disciplina");
+        setTitle("Cadastro Disciplina");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -43,7 +42,8 @@ public class Disciplina extends javax.swing.JDialog {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(416, 338));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

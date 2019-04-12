@@ -5,7 +5,6 @@
  */
 package Interface;
 
-import java.util.Locale;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,7 +19,6 @@ public class Aluno extends javax.swing.JDialog {
     public Aluno(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -32,145 +30,144 @@ public class Aluno extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        lb_OBS = new javax.swing.JLabel();
-        txt_CPF = new javax.swing.JFormattedTextField();
-        txt_Endereco = new javax.swing.JTextField();
-        lb_Matricula1 = new javax.swing.JLabel();
-        lb_Nome1 = new javax.swing.JLabel();
-        txt_Nome = new javax.swing.JTextField();
-        lb_Email1 = new javax.swing.JLabel();
-        txt_Email1 = new javax.swing.JTextField();
-        lb_Endereco1 = new javax.swing.JLabel();
-        txt_texto2 = new javax.swing.JTextField();
-        lb_Celular1 = new javax.swing.JLabel();
-        txt_Celular = new javax.swing.JFormattedTextField();
+        lbObs = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        lbMatricula1 = new javax.swing.JLabel();
+        lbNome1 = new javax.swing.JLabel();
+        txtNome1 = new javax.swing.JTextField();
+        lbEmail = new javax.swing.JLabel();
+        txtMatricula2 = new javax.swing.JTextField();
+        txtCpf = new javax.swing.JFormattedTextField();
+        lbCelular1 = new javax.swing.JLabel();
+        txtCelular = new javax.swing.JFormattedTextField();
+        lbCpf1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txt_Obs = new javax.swing.JTextArea();
-        lb_CPF1 = new javax.swing.JLabel();
-        btn_Nome = new javax.swing.JButton();
-        btn_Salva = new javax.swing.JButton();
-        btn_Excluir = new javax.swing.JButton();
-        btn_Editar = new javax.swing.JButton();
-        btn_Sair = new javax.swing.JButton();
-        txt_Matricula = new javax.swing.JTextField();
-
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
+        jTextArea1 = new javax.swing.JTextArea();
+        btNovo = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Aluno");
+        setTitle("Cadastro Aluno");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lb_OBS.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lb_OBS.setText("OBS:");
-        getContentPane().add(lb_OBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 40, 20));
+        lbObs.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lbObs.setForeground(new java.awt.Color(0, 204, 153));
+        lbObs.setText("OBS:");
+        getContentPane().add(lbObs, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 50, 20));
+
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 100, 280, 20));
+
+        lbMatricula1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lbMatricula1.setForeground(new java.awt.Color(0, 204, 153));
+        lbMatricula1.setText("Matrícula:");
+        getContentPane().add(lbMatricula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, 20));
+
+        lbNome1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lbNome1.setForeground(new java.awt.Color(0, 204, 153));
+        lbNome1.setText("Nome:");
+        getContentPane().add(lbNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 50, 20));
+
+        txtNome1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNome1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 60, 280, 20));
+
+        lbEmail.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lbEmail.setForeground(new java.awt.Color(0, 204, 153));
+        lbEmail.setText("E-mail:");
+        getContentPane().add(lbEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 50, 20));
+
+        txtMatricula2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMatricula2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtMatricula2, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 20, 70, -1));
 
         try {
-            txt_CPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txtCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        getContentPane().add(txt_CPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 100, -1));
-        getContentPane().add(txt_Endereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 320, -1));
+        getContentPane().add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 80, -1));
 
-        lb_Matricula1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lb_Matricula1.setText("Matricula:");
-        getContentPane().add(lb_Matricula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, 20));
-
-        lb_Nome1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lb_Nome1.setText("Nome:");
-        getContentPane().add(lb_Nome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 70, 20));
-        getContentPane().add(txt_Nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 320, -1));
-
-        lb_Email1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lb_Email1.setText("Email:");
-        getContentPane().add(lb_Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 70, 20));
-        getContentPane().add(txt_Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 320, -1));
-
-        lb_Endereco1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lb_Endereco1.setText("Endereço:");
-        getContentPane().add(lb_Endereco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 70, 20));
-        getContentPane().add(txt_texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 100, -1));
-
-        lb_Celular1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lb_Celular1.setText("Celular:");
-        getContentPane().add(lb_Celular1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 70, 20));
+        lbCelular1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lbCelular1.setForeground(new java.awt.Color(0, 204, 153));
+        lbCelular1.setText("Celular:");
+        getContentPane().add(lbCelular1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 50, 20));
 
         try {
-            txt_Celular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) 9 ####-####")));
+            txtCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        getContentPane().add(txt_Celular, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 100, -1));
+        getContentPane().add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 70, -1));
+
+        lbCpf1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lbCpf1.setForeground(new java.awt.Color(0, 204, 153));
+        lbCpf1.setText("CPF:");
+        getContentPane().add(lbCpf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 50, 20));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        txt_Obs.setColumns(20);
-        txt_Obs.setRows(5);
-        jScrollPane1.setViewportView(txt_Obs);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 166, 280, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 270, -1));
 
-        lb_CPF1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lb_CPF1.setText("CPF:");
-        getContentPane().add(lb_CPF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 40, 20));
+        btNovo.setText("Novo");
+        getContentPane().add(btNovo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
 
-        btn_Nome.setMnemonic('n');
-        btn_Nome.setText("Novo");
-        btn_Nome.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Salvar");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 70, -1));
+
+        jButton3.setText("Excluir");
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
+
+        jButton1.setText("Editar");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
+
+        jButton4.setText("Sair");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_NomeActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_Nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, -1, -1));
 
-        btn_Salva.setMnemonic('s');
-        btn_Salva.setText("Salvar");
-        getContentPane().add(btn_Salva, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
-
-        btn_Excluir.setMnemonic('e');
-        btn_Excluir.setText("Excluir");
-        getContentPane().add(btn_Excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, -1, -1));
-
-        btn_Editar.setMnemonic('d');
-        btn_Editar.setText("Editar");
-        getContentPane().add(btn_Editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
-
-        btn_Sair.setMnemonic('a');
-        btn_Sair.setText("Sair");
-        btn_Sair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_SairActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_Sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, -1, -1));
-        getContentPane().add(txt_Matricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 100, -1));
-
-        setBounds(0, 0, 455, 382);
+        setSize(new java.awt.Dimension(453, 414));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SairActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
-        int status = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair da aplicação", "Fechar", JOptionPane.YES_NO_OPTION);
-        if(status == JOptionPane.YES_NO_OPTION)
-        dispose();
-    }//GEN-LAST:event_btn_SairActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void btn_NomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NomeActionPerformed
-        txt_Matricula.setText("");
-        txt_Nome.setText("");
-        txt_Email1.setText("");
-        txt_Endereco.setText("");
-        txt_Celular.setText("");
-        txt_CPF.setText("");
-        txt_Obs.setText("");
-        txt_Matricula.requestFocus();
-        
-    }//GEN-LAST:event_btn_NomeActionPerformed
+    private void txtNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNome1ActionPerformed
+
+    private void txtMatricula2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatricula2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMatricula2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        int status = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair da aplicação?", "Fechar", JOptionPane.YES_NO_OPTION);
+        if (status==JOptionPane.YES_OPTION)
+            this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,28 +212,23 @@ public class Aluno extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Editar;
-    private javax.swing.JButton btn_Excluir;
-    private javax.swing.JButton btn_Nome;
-    private javax.swing.JButton btn_Sair;
-    private javax.swing.JButton btn_Salva;
+    private javax.swing.JButton btNovo;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JLabel lb_CPF1;
-    private javax.swing.JLabel lb_Celular1;
-    private javax.swing.JLabel lb_Email1;
-    private javax.swing.JLabel lb_Endereco1;
-    private javax.swing.JLabel lb_Matricula1;
-    private javax.swing.JLabel lb_Nome1;
-    private javax.swing.JLabel lb_OBS;
-    private javax.swing.JFormattedTextField txt_CPF;
-    private javax.swing.JFormattedTextField txt_Celular;
-    private javax.swing.JTextField txt_Email1;
-    private javax.swing.JTextField txt_Endereco;
-    private javax.swing.JTextField txt_Matricula;
-    private javax.swing.JTextField txt_Nome;
-    private javax.swing.JTextArea txt_Obs;
-    private javax.swing.JTextField txt_texto2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lbCelular1;
+    private javax.swing.JLabel lbCpf1;
+    private javax.swing.JLabel lbEmail;
+    private javax.swing.JLabel lbMatricula1;
+    private javax.swing.JLabel lbNome1;
+    private javax.swing.JLabel lbObs;
+    private javax.swing.JFormattedTextField txtCelular;
+    private javax.swing.JFormattedTextField txtCpf;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtMatricula2;
+    private javax.swing.JTextField txtNome1;
     // End of variables declaration//GEN-END:variables
 }
