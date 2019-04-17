@@ -38,4 +38,36 @@ public class AlunosDao {
             throw new RuntimeException(erro);
         }
     }
+    
+    public void excluirAluno(Alunos obj){
+        try {
+            String cmdsql = "delete from alunos where alu_matricula=?";
+            PreparedStatement stmt = conecta.prepareStatement(cmdsql);
+            stmt.setInt(1, obj.getMatricula());
+            stmt.execute();
+            
+            stmt.close();
+        } catch (SQLException erro) {
+            throw new RuntimeException(erro);
+        }
+    }
+    
+    public void alterarAluno(Alunos obj){
+        try {
+            String cmdsql = "update alunos set alu_nome=?, alu_email=?, alu_celular=?, alu_cpf=?, alu_obs=?, where alu_matricula";
+            PreparedStatement stmt = conecta.prepareStatement(cmdsql);
+            stmt.setString(1, obj.getNome());
+            stmt.setString(2, obj.getEmail());
+            stmt.setInt(3, obj.getCelular());
+            stmt.setInt(4, obj.getCpf());
+            stmt.setString(5, obj.getObs());
+            
+            stmt.execute();
+            
+            stmt.close();
+            
+        } catch (SQLException erro) {
+            throw new RuntimeException(erro);
+        }
+    }
 }
