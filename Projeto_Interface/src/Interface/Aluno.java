@@ -51,7 +51,7 @@ public class Aluno extends javax.swing.JDialog {
         jButton4 = new javax.swing.JButton();
         txtCpf = new javax.swing.JFormattedTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jtb_tabela = new javax.swing.JTable();
+        tabela = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro Aluno");
@@ -176,7 +176,7 @@ public class Aluno extends javax.swing.JDialog {
         });
         getContentPane().add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 90, -1));
 
-        jtb_tabela.setModel(new javax.swing.table.DefaultTableModel(
+        tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -187,7 +187,7 @@ public class Aluno extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jtb_tabela);
+        jScrollPane2.setViewportView(tabela);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 350, 160));
 
@@ -342,13 +342,13 @@ public class Aluno extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTable jtb_tabela;
     private javax.swing.JLabel lbCelular1;
     private javax.swing.JLabel lbCpf1;
     private javax.swing.JLabel lbEmail;
     private javax.swing.JLabel lbMatricula1;
     private javax.swing.JLabel lbNome1;
     private javax.swing.JLabel lbObs;
+    private javax.swing.JTable tabela;
     private javax.swing.JFormattedTextField txtCelular;
     private javax.swing.JFormattedTextField txtCpf;
     private javax.swing.JTextField txtEmail;

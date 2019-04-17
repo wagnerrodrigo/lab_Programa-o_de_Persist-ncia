@@ -9,7 +9,10 @@ import Conexão.ConectionFactory;
 import Dominio.Alunos;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -66,6 +69,29 @@ public class AlunosDao {
             
             stmt.close();
             
+        } catch (SQLException erro) {
+            throw new RuntimeException(erro);
+        }
+    }
+    
+    public List<Alunos> listarAlunos(){
+        try {
+            List<Alunos> lista = new ArrayList<Alunos>();
+            String Sql="Select * from alunos";
+            PreparedStatement stmt = conecta.prepareStatement(Sql);
+            ResultSet rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                Alunos a = new Alunos();
+                a.setMatricula(rs.getInt("alu_matricula"));
+                a.setNome(rs.getString("alu_nome"));
+                a.setEmail(rs.getString("alu_email"));
+                a.setCelular(rs.getInt("alu_celular"));
+                a.setCpf(rs.getInt("alu_cpf"));
+                a.setObs(rs.getString("alu_obs"));
+                lista.add(a);
+                
+            }return lista;
         } catch (SQLException erro) {
             throw new RuntimeException(erro);
         }
