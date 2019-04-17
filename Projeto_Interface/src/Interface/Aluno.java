@@ -147,6 +147,11 @@ public class Aluno extends javax.swing.JDialog {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
 
         jButton1.setText("Editar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
 
         jButton4.setText("Sair");
@@ -231,6 +236,27 @@ public class Aluno extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "erro ao Exclir o produto");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        try {
+            Alunos obj = new Alunos();
+            
+            obj.setNome(txtNome1.getText());
+            obj.setEmail(txtEmail.getText());
+            obj.setCelular(Integer.parseInt(txtCelular.getText()));
+            obj.setCpf(Integer.parseInt(txtCpf.getText()));
+            obj.setObs(jTextArea1.getText());
+            
+            dao = new AlunosDao();
+            dao.alterarAluno(obj);
+            
+            JOptionPane.showMessageDialog(null, "Dados alterados com sucesso");
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao alterar o produto");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
