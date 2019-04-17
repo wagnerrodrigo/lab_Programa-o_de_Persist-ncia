@@ -50,6 +50,8 @@ public class Aluno extends javax.swing.JDialog {
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         txtCpf = new javax.swing.JFormattedTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtb_tabela = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro Aluno");
@@ -128,7 +130,12 @@ public class Aluno extends javax.swing.JDialog {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 270, -1));
 
         btNovo.setText("Novo");
-        getContentPane().add(btNovo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+        btNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNovoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btNovo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
 
         jButton2.setText("Salvar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +143,7 @@ public class Aluno extends javax.swing.JDialog {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 70, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 70, -1));
 
         jButton3.setText("Excluir");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +151,7 @@ public class Aluno extends javax.swing.JDialog {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, -1, -1));
 
         jButton1.setText("Editar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +159,7 @@ public class Aluno extends javax.swing.JDialog {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, -1, -1));
 
         jButton4.setText("Sair");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +167,7 @@ public class Aluno extends javax.swing.JDialog {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, -1, -1));
 
         txtCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,7 +176,22 @@ public class Aluno extends javax.swing.JDialog {
         });
         getContentPane().add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 90, -1));
 
-        setSize(new java.awt.Dimension(453, 414));
+        jtb_tabela.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jtb_tabela);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 350, 160));
+
+        setSize(new java.awt.Dimension(453, 559));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -258,6 +280,17 @@ public class Aluno extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
+        // TODO add your handling code here:
+        txtMatricula2.setText("");
+        txtNome1.setText("");
+        txtEmail.setText("");
+        txtCelular.setText("");
+        txtCpf.setText("");
+        jTextArea1.setText("");
+        txtMatricula2.requestFocus();
+    }//GEN-LAST:event_btNovoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -307,7 +340,9 @@ public class Aluno extends javax.swing.JDialog {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTable jtb_tabela;
     private javax.swing.JLabel lbCelular1;
     private javax.swing.JLabel lbCpf1;
     private javax.swing.JLabel lbEmail;
