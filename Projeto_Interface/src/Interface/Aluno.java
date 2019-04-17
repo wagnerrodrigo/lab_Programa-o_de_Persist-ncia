@@ -139,6 +139,11 @@ public class Aluno extends javax.swing.JDialog {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 70, -1));
 
         jButton3.setText("Excluir");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
 
         jButton1.setText("Editar");
@@ -210,6 +215,22 @@ public class Aluno extends javax.swing.JDialog {
     private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCpfActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        try {
+            Alunos obj = new Alunos();
+            obj.setMatricula(Integer.parseInt(txtMatricula2.getText()));
+            
+            dao = new AlunosDao();
+            dao.excluirAluno(obj);
+            
+            JOptionPane.showMessageDialog(null, "dados Excluidos com sucesso");
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "erro ao Exclir o produto");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
