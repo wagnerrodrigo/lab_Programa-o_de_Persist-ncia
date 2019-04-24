@@ -42,7 +42,6 @@ public class Aluno extends javax.swing.JDialog {
         lbEmail = new javax.swing.JLabel();
         txtMatricula2 = new javax.swing.JTextField();
         lbCelular1 = new javax.swing.JLabel();
-        txtCelular = new javax.swing.JFormattedTextField();
         lbCpf1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -54,6 +53,7 @@ public class Aluno extends javax.swing.JDialog {
         txtCpf = new javax.swing.JFormattedTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabela = new javax.swing.JTable();
+        txtCelular = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro Aluno");
@@ -109,18 +109,6 @@ public class Aluno extends javax.swing.JDialog {
         lbCelular1.setForeground(new java.awt.Color(0, 204, 153));
         lbCelular1.setText("Celular:");
         getContentPane().add(lbCelular1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 50, 20));
-
-        try {
-            txtCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCelular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCelularActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 70, 30));
 
         lbCpf1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lbCpf1.setForeground(new java.awt.Color(0, 204, 153));
@@ -199,6 +187,7 @@ public class Aluno extends javax.swing.JDialog {
         jScrollPane2.setViewportView(tabela);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 430, 160));
+        getContentPane().add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 80, -1));
 
         setSize(new java.awt.Dimension(511, 559));
         setLocationRelativeTo(null);
@@ -230,7 +219,7 @@ public class Aluno extends javax.swing.JDialog {
             obj.setNome(txtNome1.getText());
             obj.setEmail(txtEmail.getText());
             obj.setCelular(Integer.parseInt(txtCelular.getText()));
-            obj.setCpf(Integer.parseInt(txtCpf.getText()));
+            obj.setCpf(txtCpf.getText());
             obj.setObs(jTextArea1.getText());
             
             dao = new AlunosDao();
@@ -243,10 +232,6 @@ public class Aluno extends javax.swing.JDialog {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void txtCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCelularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCelularActionPerformed
 
     private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
         // TODO add your handling code here:
@@ -276,7 +261,7 @@ public class Aluno extends javax.swing.JDialog {
             obj.setNome(txtNome1.getText());
             obj.setEmail(txtEmail.getText());
             obj.setCelular(Integer.parseInt(txtCelular.getText()));
-            obj.setCpf(Integer.parseInt(txtCpf.getText()));
+            obj.setCpf(txtCpf.getText());
             obj.setObs(jTextArea1.getText());
             
             dao = new AlunosDao();
@@ -285,7 +270,8 @@ public class Aluno extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "Dados alterados com sucesso");
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao alterar o produto");
+            JOptionPane.showMessageDialog(null, "Erro ao alterar o aluno");
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -396,7 +382,7 @@ public class Aluno extends javax.swing.JDialog {
     private javax.swing.JLabel lbNome1;
     private javax.swing.JLabel lbObs;
     private javax.swing.JTable tabela;
-    private javax.swing.JFormattedTextField txtCelular;
+    private javax.swing.JTextField txtCelular;
     private javax.swing.JFormattedTextField txtCpf;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtMatricula2;

@@ -14,12 +14,12 @@ public class Alunos {
     public String nome;
     public String email;
     public int celular;
-    public int cpf;
+    public String cpf;
     public String obs;
 
     //construtor
 
-    public Alunos(int matricula, String nome, String email, int celular, int cpf, String obs) {
+    public Alunos(int matricula, String nome, String email, int celular, String cpf, String obs) {
         this.matricula = matricula;
         this.nome = nome;
         this.email = email;
@@ -68,11 +68,11 @@ public class Alunos {
         this.celular = celular;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
