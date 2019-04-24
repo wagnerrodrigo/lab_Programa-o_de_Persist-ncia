@@ -57,6 +57,11 @@ public class Aluno extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro Aluno");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbObs.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -289,6 +294,11 @@ public class Aluno extends javax.swing.JDialog {
         jTextArea1.setText("");
         txtMatricula2.requestFocus();
     }//GEN-LAST:event_btNovoActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        Lista();
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
