@@ -191,6 +191,11 @@ public class Aluno extends javax.swing.JDialog {
                 "Matricula", "Nome", "E-mail", "Celular", "CPF", "Obs"
             }
         ));
+        tabela.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tabela);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 430, 160));
@@ -299,6 +304,16 @@ public class Aluno extends javax.swing.JDialog {
         // TODO add your handling code here:
         Lista();
     }//GEN-LAST:event_formWindowActivated
+
+    private void tabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaMouseClicked
+        // TODO add your handling code here:
+        txtMatricula2.setText(tabela.getValueAt(tabela.getSelectedRow(),0).toString());
+        txtNome1.setText(tabela.getValueAt(tabela.getSelectedRow(), 1).toString());
+        txtEmail.setText(tabela.getValueAt(tabela.getSelectedRow(), 2).toString());
+        txtCelular.setText(tabela.getValueAt(tabela.getSelectedRow(), 3).toString());
+        txtCpf.setText(tabela.getValueAt(tabela.getSelectedRow(), 4).toString());
+        jTextArea1.setText(tabela.getValueAt(tabela.getSelectedRow(), 5).toString());
+    }//GEN-LAST:event_tabelaMouseClicked
 
     /**
      * @param args the command line arguments
