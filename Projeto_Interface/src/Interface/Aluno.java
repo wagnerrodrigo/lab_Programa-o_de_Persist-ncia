@@ -8,6 +8,8 @@ package Interface;
 import DAO.AlunosDao;
 import Dominio.Alunos;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.util.List;
 
 /**
  *
@@ -135,7 +137,7 @@ public class Aluno extends javax.swing.JDialog {
                 btNovoActionPerformed(evt);
             }
         });
-        getContentPane().add(btNovo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
+        getContentPane().add(btNovo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 480, -1, -1));
 
         jButton2.setText("Salvar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +145,7 @@ public class Aluno extends javax.swing.JDialog {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 70, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 70, -1));
 
         jButton3.setText("Excluir");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +153,7 @@ public class Aluno extends javax.swing.JDialog {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, -1, -1));
 
         jButton1.setText("Editar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +161,7 @@ public class Aluno extends javax.swing.JDialog {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 480, -1, -1));
 
         jButton4.setText("Sair");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +169,7 @@ public class Aluno extends javax.swing.JDialog {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 480, -1, -1));
 
         txtCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,20 +180,17 @@ public class Aluno extends javax.swing.JDialog {
 
         tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Matricula", "Nome", "E-mail", "Celular", "CPF", "Obs"
             }
         ));
         jScrollPane2.setViewportView(tabela);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 350, 160));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 430, 160));
 
-        setSize(new java.awt.Dimension(453, 559));
+        setSize(new java.awt.Dimension(511, 559));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -333,6 +332,29 @@ public class Aluno extends javax.swing.JDialog {
         });
     }
 
+    public void Lista(){
+        try {
+            AlunosDao dao = new AlunosDao();
+            List<Alunos> listarAlunos = dao.listarAlunos();
+            DefaultTableModel modelo = (DefaultTableModel) tabela.getModel();
+            modelo.setNumRows(0);
+            
+            for(Alunos la : listarAlunos){
+                modelo.addRow(new Object[]{
+                    la.getMatricula(),
+                    la.getNome(),
+                    la.getEmail(),
+                    la.getCelular(),
+                    la.getCpf(),
+                    la.getObs(),                    
+                });
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao lista o aluno");
+        }
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btNovo;
     private javax.swing.JButton jButton1;
