@@ -54,6 +54,7 @@ public class PrimeiroHibernete {
        for(Funcionario f: lista){
            System.out.println("Nome: " + f.getNome());
            System.out.println("Departamento: " + f.getDepartamento().getNome());
+           //s.delete(f);
        }
        s.getTransaction().commit();
     }
