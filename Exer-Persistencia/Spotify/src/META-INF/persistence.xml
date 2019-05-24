@@ -3,7 +3,7 @@
   <persistence-unit name="SpotifyPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>Dominio.Playlist</class>
-    <class>Dominio.Musicas</class>
+    <class>Dominio.Musica</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dbmusic?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
