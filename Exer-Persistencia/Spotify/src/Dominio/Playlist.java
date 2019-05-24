@@ -6,11 +6,13 @@
 package Dominio;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -23,6 +25,7 @@ public class Playlist implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column( precision=11)
+    @OneToMany(mappedBy = "Playlist", cascade = CascadeType.ALL, orphanRemoval = true)
     private Long id;
     private String nome;
     

@@ -11,13 +11,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
  * @author alunoces
  */
 @Entity
-public class Musicas implements Serializable {
+public class Musica implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -34,6 +35,7 @@ public class Musicas implements Serializable {
     @Column( precision=11)
     private int nota;
     
+    @ManyToOne
     private int playlist;
 
     public String getTitulo() {
@@ -87,10 +89,10 @@ public class Musicas implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Musicas)) {
+        if (!(object instanceof Musica)) {
             return false;
         }
-        Musicas other = (Musicas) object;
+        Musica other = (Musica) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
