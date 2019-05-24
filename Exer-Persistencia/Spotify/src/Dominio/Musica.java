@@ -22,17 +22,17 @@ public class Musica implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column( precision=11)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column( length=11)
     private Long id;
     
-    @Column( precision=100)
+    @Column( length=100)
     private String titulo;
     
-    @Column( precision=100)
+    @Column( length=100)
     private String banda;
     
-    @Column( precision=11)
+    @Column( length=11)
     private int nota;
     
     @ManyToOne
