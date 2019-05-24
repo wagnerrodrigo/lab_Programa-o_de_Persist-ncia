@@ -6,6 +6,7 @@
 package Dominio;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,14 +24,16 @@ public class Playlist implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column( precision=11)
-    @OneToMany(mappedBy = "Playlist", cascade = CascadeType.ALL, orphanRemoval = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column( length=11)
     private Long id;
     private String nome;
     
-    @Column( precision=60)
+    @Column( length=60)
     private String Descricao;
+
+    @OneToMany(mappedBy = "Playlist", cascade = CascadeType.ALL)
+    private List<Playlist> playlist;
 
     public String getNome() {
         return nome;
