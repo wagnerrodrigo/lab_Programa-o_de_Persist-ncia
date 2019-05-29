@@ -27,6 +27,34 @@ public class Principal extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jm_Cadastro = new javax.swing.JMenu();
+        btn_clientes = new javax.swing.JMenuItem();
+        btn_Pedido = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        btn_sair = new javax.swing.JMenuItem();
+
+        jm_Cadastro.setText("Cadastro");
+
+        btn_clientes.setText("Clientes");
+        btn_clientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_clientesActionPerformed(evt);
+            }
+        });
+        jm_Cadastro.add(btn_clientes);
+
+        btn_Pedido.setText("Pedido");
+        jm_Cadastro.add(btn_Pedido);
+        jm_Cadastro.add(jSeparator1);
+
+        btn_sair.setText("Sair");
+        jm_Cadastro.add(btn_sair);
+
+        jMenuBar1.add(jm_Cadastro);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -35,13 +63,23 @@ public class Principal extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGap(0, 257, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_clientesActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem btn_Pedido;
+    private javax.swing.JMenuItem btn_clientes;
+    private javax.swing.JMenuItem btn_sair;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenu jm_Cadastro;
     // End of variables declaration//GEN-END:variables
 }
