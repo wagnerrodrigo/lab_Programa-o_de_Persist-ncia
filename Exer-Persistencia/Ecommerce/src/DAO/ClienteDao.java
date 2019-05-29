@@ -23,4 +23,15 @@ public class ClienteDao {
        em.getTransaction().commit();
        em.close();
     }
+    
+    
+     public void excluir(Cliente cliente){
+        EntityManager em = Conexao.getEntityManager();
+                      em.getTransaction().begin();
+                      cliente = em.merge(cliente);
+                      em.remove(cliente);
+                      em.getTransaction().commit();
+                      em.close();
+     
+     }
 }
