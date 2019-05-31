@@ -5,8 +5,11 @@
  */
 package Controle;
 
+import DAO.ClienteDao;
 import Dominio.Cliente;
 import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,7 +17,47 @@ import java.beans.PropertyChangeSupport;
  */
 public class ClienteControl {
 
-    //private final PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
+    private final PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
+    private Cliente clienteDigitado;
+    private Cliente clienteSelecionado;
+    private List<Cliente> clientesTabelas;
+    private ClienteDao clientedao;
+    
+    public Cliente getClienteDigitado(){
+        return clienteDigitado;
+    }
+    
+    public void setClienteDigitado(Cliente clienteDigitado){
+        Cliente oldClienteDigitado = this.clienteDigitado;
+        this.clienteDigitado = clienteDigitado;
+        propertyChangeSupport.firePropertyChange("clienteDigitado",oldClienteDigitado,clienteDigitado);        
+    }
+    
+    public Cliente getClienteSelecionado(){
+        return clienteSelecionado;
+    }
+    
+    public void setClienteSelecionado(Cliente clienteSelecionado){
+        if (this.clienteSelecionado !=null) {
+            setClienteDigitado(clienteSelecionado);            
+        }
+        this.clienteSelecionado = clienteSelecionado;
+    }
+    
+    public List<Cliente> getClientesTabelas(){
+        return clientesTabelas;
+    }
+    
+    public void setClientesTabelas(List<Cliente> clientesTabelas){
+        this.clientesTabelas = clientesTabelas;
+    }
+    
+    public ClienteControl(){
+        clientedao = new ClienteDao();
+        clientesTabelas = ObservableCollections.observableList(new ArrayList<Cliente>());
+        novo();
+        pesquisar();
+    }
     
     public void salva(){
         clientedao.salvarAtualizar(clienteDigitado);
