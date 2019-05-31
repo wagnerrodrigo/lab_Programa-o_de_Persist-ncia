@@ -6,7 +6,9 @@
 package DAO;
 
 import Dominio.Cliente;
+import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  *
@@ -33,5 +35,32 @@ public class ClienteDao {
                       em.getTransaction().commit();
                       em.close();
      
+     }
+     
+     public List<Cliente> pesquisar(Cliente cliente){
+         EntityManager em = Conexao.getEntityManager();
+         StringBuilder sql = new StringBuilder("from cliente c where 1=1");
+         
+         if (cliente.getId()!=null) {
+             sql.append("and c.id like :id ");
+         }
+         if (cliente.getNome()!=null && !cliente.getNome().equals("")) {
+             sql.append("and c.nome like :nome ");             
+         }
+         if (cliente.getEmail()!=null && !cliente.getEmail().equals("")) {
+             sql.append("and c.email like :email ");             
+         }
+         Query query = em.createQuery(sql.toString());
+         
+         if (cliente.getId() !=null) {
+             query.setParameter("id", cliente.getId());
+         }
+         if (cliente.getNome() !=null && !cliente.getNome().equals("")) {
+             query.setParameter("nome","%" + cliente.getNome());             
+         }
+         if (cliente.getEmail() !=null && !cliente.getEmail().equals("")) {
+             query.setParameter("email","%" + cliente.getEmail());
+         }
+         return query.getResultList();
      }
 }
