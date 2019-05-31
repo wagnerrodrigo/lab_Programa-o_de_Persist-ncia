@@ -7,6 +7,7 @@ package Controle;
 
 import DAO.ClienteDao;
 import Dominio.Cliente;
+import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.List;
@@ -80,5 +81,12 @@ public class ClienteControl {
         clientesTabelas.addAll(clientedao.pesquisar(clienteDigitado));
     }
     
+    public void addPropertyChangeListener(PropertyChangeListener e){
+        propertyChangeSupport.addPropertyChangeListener(e);
+    }
+    
+    public void removePropertyChangeListener(PropertyChangeListener e){
+        propertyChangeSupport.removePropertyChangeListener(e);
+    }
     
 }
