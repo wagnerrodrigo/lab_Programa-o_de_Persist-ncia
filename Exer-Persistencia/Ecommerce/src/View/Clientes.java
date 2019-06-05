@@ -6,6 +6,7 @@
 package View;
 
 import Controle.ClienteControl;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -64,6 +65,11 @@ public class Clientes extends javax.swing.JDialog {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btn_Novo.setText("Novo");
+        btn_Novo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_NovoActionPerformed(evt);
+            }
+        });
 
         btn_Salvar.setText("Salvar");
         btn_Salvar.addActionListener(new java.awt.event.ActionListener() {
@@ -73,8 +79,18 @@ public class Clientes extends javax.swing.JDialog {
         });
 
         btn_Excluir.setText("Excluir");
+        btn_Excluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ExcluirActionPerformed(evt);
+            }
+        });
 
         btn_Pesquisar.setText("Pesquisar");
+        btn_Pesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_PesquisarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -222,7 +238,27 @@ public class Clientes extends javax.swing.JDialog {
 
     private void btn_SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalvarActionPerformed
         // TODO add your handling code here:
+        clientecontrol.salva();
+        JOptionPane.showMessageDialog(this, "Cliente salvo com sucesso","Salvar Cliente",JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btn_SalvarActionPerformed
+
+    private void btn_NovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NovoActionPerformed
+        // TODO add your handling code here:
+        clientecontrol.novo();
+    }//GEN-LAST:event_btn_NovoActionPerformed
+
+    private void btn_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExcluirActionPerformed
+        // TODO add your handling code here:
+        if (JOptionPane.showConfirmDialog(this, "Deseja realmente excluir o cliente","Exluir Cliente",JOptionPane.YES_NO_OPTION)== JOptionPane.YES_OPTION) {
+             clientecontrol.excluir();
+        }
+       
+    }//GEN-LAST:event_btn_ExcluirActionPerformed
+
+    private void btn_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PesquisarActionPerformed
+        // TODO add your handling code here:
+        clientecontrol.pesquisar();
+    }//GEN-LAST:event_btn_PesquisarActionPerformed
 
     /**
      * @param args the command line arguments
