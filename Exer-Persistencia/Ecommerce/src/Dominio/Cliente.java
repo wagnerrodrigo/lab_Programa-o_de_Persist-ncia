@@ -11,24 +11,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.Table;
 /**
  *
  * @author alunoces
  */
 @Entity
+@Table (name="TB_Cliente") //renomear a tabela do banco
 public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id   // chave primaria
+    @GeneratedValue(strategy = GenerationType.AUTO)  // geração automadica auto incremente
     private Long id;
-    @Column(name="MN_Cliente",length = 255, nullable = false)
+    @Column(name="MN_Cliente",length = 255, nullable = false)  /// nome da coluna tamnho do campo nao recebe valor em branco
     private String nome;
     @Column(name="MN_Email",length=255, nullable = false)
     private String email;
 
-    public Cliente() {
+    public Cliente() { // o framework presica de construtor vazio
     }
     
     
