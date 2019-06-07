@@ -41,6 +41,11 @@ public class MenuView extends javax.swing.JFrame {
 
         ItemM_Cliente.setMnemonic('o');
         ItemM_Cliente.setText("Cliente");
+        ItemM_Cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemM_ClienteActionPerformed(evt);
+            }
+        });
         fileMenu.add(ItemM_Cliente);
 
         ItemM_Produto.setMnemonic('s');
@@ -77,6 +82,13 @@ public class MenuView extends javax.swing.JFrame {
     private void ItemM_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemM_SairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_ItemM_SairActionPerformed
+
+    private void ItemM_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemM_ClienteActionPerformed
+        // TODO add your handling code here:
+        Clientes cliente = new Clientes();
+        this.desktopPane.add(cliente);
+        cliente.setVisible(true);
+    }//GEN-LAST:event_ItemM_ClienteActionPerformed
 
     /**
      * @param args the command line arguments
