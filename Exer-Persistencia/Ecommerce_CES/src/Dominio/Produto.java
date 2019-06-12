@@ -10,18 +10,18 @@ package Dominio;
  * @author alunoces
  */
 public class Produto {
-    public String codigo;
+    public int codigo;
     public String nome;
     public int preco;
 
     public Produto() {
     }
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 

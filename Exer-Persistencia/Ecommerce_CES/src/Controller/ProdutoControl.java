@@ -75,7 +75,7 @@ public class ProdutoControl {
     
     public final void pesquisarProduto(){
         produtosTabelas.clear();
-        produtosTabelas.add(produtodao.pesquisar(produtoDigitado));
+        produtosTabelas.add((Produto) produtodao.pesquisar(produtoDigitado));
         
     }
     
